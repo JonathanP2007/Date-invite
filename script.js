@@ -10,16 +10,11 @@ const heart=document.getElementById("heart");
 
 const text=`רציתי להזמין אותך
 לערב רומנטי ביום שישי.
+אני אגיע בצהריים לאסוף אותך
+את רק צריכה לוודא להיות יפה
+כל השאר עליי
 
-רק אני ואת.
-
-אוכל טוב 🍝
-
-וקצת זמן איכות ביחד.
-
-אז...
-
-תרצי לצאת איתי? ❤️`;
+תסכימי לצאת איתי? ❤️`;
 
 button.onclick=()=>{
 
@@ -55,7 +50,7 @@ heart.style.transform="rotate(-45deg) scale(1.4)";
 
 setTimeout(()=>{
 
-window.location.href="sms:+972YOURNUMBER?body=אני%20מסכימה%20❤️";
+window.location.href="https://wa.me/972532388902?text=אני%20מסכימה%20❤️";
 
 },1200);
 
