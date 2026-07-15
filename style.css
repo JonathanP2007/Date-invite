@@ -1,8 +1,313 @@
-body {
-    background: red !important;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-h1 {
-    color: yellow !important;
-    font-size: 100px !important;
+body{
+    font-family:"Assistant",sans-serif;
+    height:100vh;
+
+    background:
+    radial-gradient(circle at top,#ffd6e8,#fff7fb);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+
+/* OPENING SCREEN */
+
+.hero{
+    text-align:center;
+    padding:20px;
+}
+
+
+.smallTitle{
+    color:#ff4d88;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+
+h1{
+    font-size:55px;
+    color:#222;
+}
+
+
+button{
+    margin-top:60px;
+
+    padding:18px 45px;
+
+    border:none;
+    border-radius:50px;
+
+    background:#ff4d88;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px rgba(255,77,136,.3);
+}
+
+
+
+/* GENERAL */
+
+.hidden{
+    display:none !important;
+}
+
+
+
+/* LETTER */
+
+#letter{
+
+    position:absolute;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+.paper{
+
+    width:min(90vw,650px);
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 40px 80px rgba(0,0,0,.15);
+
+}
+
+
+
+.paper h2{
+
+    color:#ff4d88;
+
+    font-size:38px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+#typing{
+
+    font-size:26px;
+
+    line-height:2;
+
+    min-height:220px;
+
+    color:#555;
+
+}
+
+
+
+/* HEART */
+
+.heart{
+
+    width:220px;
+
+    height:220px;
+
+    margin:50px auto 0;
+
+    position:relative;
+
+    cursor:pointer;
+
+    animation:pulse 1.3s infinite;
+
+}
+
+
+
+/* actual heart */
+
+.heartShape{
+
+    position:absolute;
+
+    width:110px;
+
+    height:110px;
+
+    background:#ff4d88;
+
+    transform:rotate(-45deg);
+
+    top:60px;
+
+    left:55px;
+
+}
+
+
+
+.heartShape::before,
+.heartShape::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:110px;
+
+    height:110px;
+
+    background:#ff4d88;
+
+    border-radius:50%;
+
+}
+
+
+
+.heartShape::before{
+
+    top:-55px;
+
+    left:0;
+
+}
+
+
+
+.heartShape::after{
+
+    top:0;
+
+    left:55px;
+
+}
+
+
+
+/* text inside heart */
+
+.heart span{
+
+    position:absolute;
+
+    top:100px;
+
+    left:0;
+
+    width:220px;
+
+    text-align:center;
+
+    z-index:10;
+
+    color:white;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+}
+
+
+
+
+@keyframes pulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+
+
+/* PHONE */
+
+@media(max-width:600px){
+
+    h1{
+
+        font-size:38px;
+
+    }
+
+
+    .smallTitle{
+
+        font-size:18px;
+
+    }
+
+
+    button{
+
+        font-size:20px;
+
+        margin-top:40px;
+
+    }
+
+
+    .paper{
+
+        padding:35px 20px;
+
+    }
+
+
+    #typing{
+
+        font-size:22px;
+
+    }
+
+
+    .heart{
+
+        transform:scale(.85);
+
+    }
+
 }
