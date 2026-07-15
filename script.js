@@ -4,11 +4,8 @@ const letter = document.getElementById("letter");
 const typing = document.getElementById("typing");
 const heart = document.getElementById("heart");
 
-alert("js works");
 
-
-const text = 
-`רציתי להזמין אותך
+const text = `רציתי להזמין אותך
 לערב רומנטי ביום שישי.
 
 אני אגיע בצהריים לאסוף אותך.
@@ -20,69 +17,55 @@ const text =
 
 
 
-button.addEventListener("click", () => {
+button.onclick = function(){
 
-
-    // Hide opening screen
     hero.style.display = "none";
 
-
-    // Show letter
     letter.classList.remove("hidden");
 
 
-    // Type the letter
     let i = 0;
 
 
-    const timer = setInterval(() => {
-
+    const timer = setInterval(function(){
 
         typing.textContent += text[i];
 
         i++;
 
 
-        if (i >= text.length) {
-
+        if(i >= text.length){
 
             clearInterval(timer);
 
-
-            // Show heart after typing finishes
             heart.classList.remove("hidden");
-
 
         }
 
 
-    }, 45);
+    },45);
 
-
-});
-
+};
 
 
 
-heart.addEventListener("click", () => {
+heart.onclick = function(){
 
 
-    // Stop beating
     heart.style.animation = "none";
 
 
-    // Grow effect
     heart.style.transform = "scale(1.4)";
 
 
-    setTimeout(() => {
+    setTimeout(function(){
 
 
         window.location.href =
         "https://wa.me/972532388902?text=אני%20מסכימה%20❤️";
 
 
-    }, 1200);
+    },1200);
 
 
-});
+};
