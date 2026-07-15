@@ -11,7 +11,8 @@ body{
 
     height:100vh;
 
-    background:linear-gradient(135deg,#ffd6e8,#fff7fb);
+    background:
+    radial-gradient(circle at top,#ffd6e8,#fff7fb);
 
     display:flex;
 
@@ -41,15 +42,15 @@ body{
 
     font-size:22px;
 
+    margin-bottom:20px;
+
 }
 
 
 
 h1{
 
-    margin-top:20px;
-
-    font-size:50px;
+    font-size:55px;
 
     color:#222;
 
@@ -59,7 +60,7 @@ h1{
 
 button{
 
-    margin-top:50px;
+    margin-top:60px;
 
     padding:18px 45px;
 
@@ -75,6 +76,8 @@ button{
 
     cursor:pointer;
 
+    transition:.3s;
+
 }
 
 
@@ -82,6 +85,8 @@ button{
 button:hover{
 
     transform:translateY(-5px);
+
+    box-shadow:0 20px 40px rgba(255,77,136,.3);
 
 }
 
@@ -121,7 +126,7 @@ button:hover{
 
     text-align:center;
 
-    box-shadow:0 30px 70px rgba(0,0,0,.15);
+    box-shadow:0 40px 80px rgba(0,0,0,.15);
 
 }
 
@@ -131,7 +136,9 @@ button:hover{
 
     color:#ff4d88;
 
-    font-size:36px;
+    font-size:38px;
+
+    margin-bottom:30px;
 
 }
 
@@ -139,11 +146,13 @@ button:hover{
 
 #typing{
 
-    margin-top:30px;
-
-    font-size:25px;
+    font-size:26px;
 
     line-height:2;
+
+    min-height:220px;
+
+    color:#555;
 
 }
 
@@ -163,13 +172,13 @@ button:hover{
 
     cursor:pointer;
 
+    animation:pulse 1.3s infinite;
+
 }
 
 
 
 .heartShape{
-
-    position:absolute;
 
     width:120px;
 
@@ -177,18 +186,20 @@ button:hover{
 
     background:#ff4d88;
 
-    transform:rotate(-45deg);
+    position:absolute;
 
-    top:50px;
+    top:60px;
 
     left:50px;
+
+    transform:rotate(-45deg);
 
 }
 
 
 
-.heartShape:before,
-.heartShape:after{
+.heartShape::before,
+.heartShape::after{
 
     content:"";
 
@@ -206,15 +217,19 @@ button:hover{
 
 
 
-.heartShape:before{
+.heartShape::before{
 
     top:-60px;
+
+    left:0;
 
 }
 
 
 
-.heartShape:after{
+.heartShape::after{
+
+    top:0;
 
     left:60px;
 
@@ -242,13 +257,7 @@ button:hover{
 
     z-index:5;
 
-}
-
-
-
-.heart{
-
-    animation:pulse 1.3s infinite;
+    white-space:nowrap;
 
 }
 
@@ -262,6 +271,7 @@ button:hover{
 
     }
 
+
     50%{
 
         transform:scale(1.08);
@@ -272,25 +282,43 @@ button:hover{
 
 
 
+/* MOBILE */
+
 @media(max-width:600px){
 
     h1{
 
-        font-size:35px;
+        font-size:38px;
 
     }
 
 
     .paper{
 
-        padding:30px 20px;
+        padding:35px 20px;
 
     }
 
 
     #typing{
 
-        font-size:21px;
+        font-size:22px;
+
+    }
+
+
+    button{
+
+        font-size:20px;
+
+        margin-top:40px;
+
+    }
+
+
+    .heart{
+
+        transform:scale(.85);
 
     }
 
