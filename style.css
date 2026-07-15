@@ -195,9 +195,9 @@ button:hover{
 }
 
 .heart span{
-
     transform:rotate(45deg);
-
+    position:relative;
+    z-index:10;
 }
 
 @keyframes beat{
