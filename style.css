@@ -9,18 +9,17 @@ body{
 
     font-family:"Assistant",sans-serif;
 
-    background:
-    radial-gradient(circle at top,#ffd6e8,#fff7fb);
-
     height:100vh;
 
-    overflow:hidden;
+    background:linear-gradient(135deg,#ffd6e8,#fff7fb);
 
     display:flex;
 
     justify-content:center;
 
     align-items:center;
+
+    overflow:hidden;
 
 }
 
@@ -42,15 +41,15 @@ body{
 
     font-size:22px;
 
-    margin-bottom:20px;
-
 }
 
 
 
 h1{
 
-    font-size:55px;
+    margin-top:20px;
+
+    font-size:50px;
 
     color:#222;
 
@@ -60,7 +59,7 @@ h1{
 
 button{
 
-    margin-top:60px;
+    margin-top:50px;
 
     padding:18px 45px;
 
@@ -76,8 +75,6 @@ button{
 
     cursor:pointer;
 
-    transition:.3s;
-
 }
 
 
@@ -86,16 +83,13 @@ button:hover{
 
     transform:translateY(-5px);
 
-    box-shadow:
-    0 20px 40px rgba(255,77,136,.3);
-
 }
 
 
 
 .hidden{
 
-    display:none;
+    display:none !important;
 
 }
 
@@ -121,14 +115,13 @@ button:hover{
 
     background:white;
 
-    padding:60px;
+    padding:50px;
 
     border-radius:25px;
 
     text-align:center;
 
-    box-shadow:
-    0 40px 80px rgba(0,0,0,.15);
+    box-shadow:0 30px 70px rgba(0,0,0,.15);
 
 }
 
@@ -138,9 +131,7 @@ button:hover{
 
     color:#ff4d88;
 
-    font-size:38px;
-
-    margin-bottom:30px;
+    font-size:36px;
 
 }
 
@@ -148,13 +139,11 @@ button:hover{
 
 #typing{
 
-    font-size:26px;
+    margin-top:30px;
+
+    font-size:25px;
 
     line-height:2;
-
-    min-height:220px;
-
-    color:#555;
 
 }
 
@@ -174,66 +163,60 @@ button:hover{
 
     cursor:pointer;
 
-    animation:beat 1.3s infinite;
-
 }
 
 
 
 .heartShape{
 
-    width:140px;
+    position:absolute;
 
-    height:140px;
+    width:120px;
+
+    height:120px;
 
     background:#ff4d88;
 
-    position:absolute;
-
-    top:40px;
-
-    left:40px;
-
     transform:rotate(-45deg);
+
+    top:50px;
+
+    left:50px;
 
 }
 
 
 
-.heartShape::before,
-.heartShape::after{
+.heartShape:before,
+.heartShape:after{
 
     content:"";
 
-    width:140px;
+    position:absolute;
 
-    height:140px;
+    width:120px;
+
+    height:120px;
 
     background:#ff4d88;
 
     border-radius:50%;
 
-    position:absolute;
+}
+
+
+
+.heartShape:before{
+
+    top:-60px;
 
 }
 
 
 
-.heartShape::before{
+.heartShape:after{
 
-    top:-70px;
-
-    left:0;
-
-}
-
-
-
-.heartShape::after{
-
-    left:70px;
-
-    top:0;
+    left:60px;
 
 }
 
@@ -243,30 +226,35 @@ button:hover{
 
     position:absolute;
 
-    z-index:10;
+    width:220px;
 
     top:95px;
 
     left:0;
 
-    width:220px;
-
     text-align:center;
 
     color:white;
 
-    font-size:28px;
+    font-size:26px;
 
     font-weight:bold;
 
-    white-space:nowrap;
+    z-index:5;
 
 }
 
 
 
-@keyframes beat{
+.heart{
 
+    animation:pulse 1.3s infinite;
+
+}
+
+
+
+@keyframes pulse{
 
     0%,100%{
 
@@ -274,47 +262,35 @@ button:hover{
 
     }
 
-
     50%{
 
         transform:scale(1.08);
 
     }
 
-
 }
 
 
 
-/* PHONE */
-
 @media(max-width:600px){
-
 
     h1{
 
-        font-size:38px;
+        font-size:35px;
 
     }
 
 
     .paper{
 
-        padding:35px 20px;
+        padding:30px 20px;
 
     }
 
 
     #typing{
 
-        font-size:22px;
-
-    }
-
-
-    .heart{
-
-        transform:scale(.85);
+        font-size:21px;
 
     }
 
