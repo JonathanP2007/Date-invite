@@ -4,6 +4,8 @@ const letter = document.getElementById("letter");
 const typing = document.getElementById("typing");
 const heart = document.getElementById("heart");
 
+alert("js works");
+
 
 const text = 
 `רציתי להזמין אותך
