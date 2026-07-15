@@ -1,0 +1,217 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:"Assistant",sans-serif;
+
+    background:
+    radial-gradient(circle at top,#ffd6e8,#fff7fb);
+
+    overflow:hidden;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero{
+
+    text-align:center;
+
+}
+
+.smallTitle{
+
+    color:#ff4d88;
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+}
+
+h1{
+
+    font-size:55px;
+
+    color:#222;
+
+}
+
+p{
+
+    margin-top:20px;
+
+    font-size:24px;
+
+    color:#555;
+
+}
+
+button{
+
+    margin-top:60px;
+
+    padding:18px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    background:#ff4d88;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 20px 40px rgba(255,77,136,.3);
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+#letter{
+
+    position:absolute;
+
+}
+
+.paper{
+
+    width:min(90vw,650px);
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:25px;
+
+    box-shadow:0 40px 80px rgba(0,0,0,.15);
+
+    text-align:center;
+
+}
+
+.paper h2{
+
+    color:#ff4d88;
+
+    margin-bottom:30px;
+
+}
+
+#typing{
+
+    font-size:26px;
+
+    line-height:2;
+
+    min-height:220px;
+
+}
+
+.heart{
+
+    margin:60px auto 0;
+
+    width:180px;
+
+    height:180px;
+
+    background:#ff4d88;
+
+    transform:rotate(-45deg);
+
+    cursor:pointer;
+
+    animation:beat 1.3s infinite;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:28px;
+
+}
+
+.heart::before,
+.heart::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    background:#ff4d88;
+
+    border-radius:50%;
+
+}
+
+.heart::before{
+
+    top:-90px;
+
+}
+
+.heart::after{
+
+    left:90px;
+
+}
+
+.heart span{
+
+    transform:rotate(45deg);
+
+}
+
+@keyframes beat{
+
+0%,100%{
+
+transform:rotate(-45deg) scale(1);
+
+}
+
+50%{
+
+transform:rotate(-45deg) scale(1.08);
+
+}
+
+}
