@@ -4,6 +4,7 @@
     box-sizing:border-box;
 }
 
+
 body{
 
     font-family:"Assistant",sans-serif;
@@ -11,9 +12,9 @@ body{
     background:
     radial-gradient(circle at top,#ffd6e8,#fff7fb);
 
-    overflow:hidden;
-
     height:100vh;
+
+    overflow:hidden;
 
     display:flex;
 
@@ -24,7 +25,6 @@ body{
 }
 
 
-/* First screen */
 
 .hero{
 
@@ -35,15 +35,17 @@ body{
 }
 
 
+
 .smallTitle{
 
     color:#ff4d88;
 
-    margin-bottom:20px;
-
     font-size:22px;
 
+    margin-bottom:20px;
+
 }
+
 
 
 h1{
@@ -55,60 +57,48 @@ h1{
 }
 
 
-p{
-
-    margin-top:20px;
-
-    font-size:24px;
-
-    color:#555;
-
-}
-
-
-
-/* Button */
 
 button{
 
     margin-top:60px;
 
-    padding:18px 40px;
+    padding:18px 45px;
 
     border:none;
 
     border-radius:50px;
 
-    font-size:24px;
-
-    cursor:pointer;
-
     background:#ff4d88;
 
     color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
 
     transition:.3s;
 
 }
 
 
+
 button:hover{
 
     transform:translateY(-5px);
 
-    box-shadow:0 20px 40px rgba(255,77,136,.3);
+    box-shadow:
+    0 20px 40px rgba(255,77,136,.3);
 
 }
 
 
-
-/* General */
 
 .hidden{
 
     display:none;
 
 }
+
 
 
 #letter{
@@ -125,8 +115,6 @@ button:hover{
 
 
 
-/* Letter */
-
 .paper{
 
     width:min(90vw,650px);
@@ -137,23 +125,25 @@ button:hover{
 
     border-radius:25px;
 
+    text-align:center;
+
     box-shadow:
     0 40px 80px rgba(0,0,0,.15);
 
-    text-align:center;
-
 }
+
 
 
 .paper h2{
 
     color:#ff4d88;
 
+    font-size:38px;
+
     margin-bottom:30px;
 
-    font-size:36px;
-
 }
+
 
 
 #typing{
@@ -164,94 +154,110 @@ button:hover{
 
     min-height:220px;
 
-    color:#444;
+    color:#555;
 
 }
 
 
 
-/* Heart */
+/* HEART */
 
 .heart{
 
-    margin:60px auto 0;
+    width:220px;
 
-    width:180px;
+    height:220px;
 
-    height:180px;
+    margin:50px auto 0;
 
-    background:#ff4d88;
-
-    transform:rotate(-45deg);
+    position:relative;
 
     cursor:pointer;
 
     animation:beat 1.3s infinite;
 
-    position:relative;
+}
 
-    color:white;
 
-    font-weight:bold;
 
-    font-size:28px;
+.heartShape{
+
+    width:140px;
+
+    height:140px;
+
+    background:#ff4d88;
+
+    position:absolute;
+
+    top:40px;
+
+    left:40px;
+
+    transform:rotate(-45deg);
 
 }
 
 
 
-/* Heart circles */
-
-.heart::before,
-.heart::after{
+.heartShape::before,
+.heartShape::after{
 
     content:"";
 
-    position:absolute;
+    width:140px;
 
-    width:180px;
-
-    height:180px;
+    height:140px;
 
     background:#ff4d88;
 
     border-radius:50%;
 
-}
-
-
-.heart::before{
-
-    top:-90px;
-
-}
-
-
-.heart::after{
-
-    left:90px;
+    position:absolute;
 
 }
 
 
 
-/* Heart text */
+.heartShape::before{
+
+    top:-70px;
+
+    left:0;
+
+}
+
+
+
+.heartShape::after{
+
+    left:70px;
+
+    top:0;
+
+}
+
+
 
 .heart span{
 
     position:absolute;
 
-    width:180px;
+    z-index:10;
 
-    text-align:center;
-
-    top:75px;
+    top:95px;
 
     left:0;
 
-    transform:rotate(45deg);
+    width:220px;
 
-    z-index:10;
+    text-align:center;
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:bold;
 
     white-space:nowrap;
 
@@ -259,28 +265,28 @@ button:hover{
 
 
 
-/* Heart animation */
-
 @keyframes beat{
+
 
     0%,100%{
 
-        transform:rotate(-45deg) scale(1);
+        transform:scale(1);
 
     }
 
 
     50%{
 
-        transform:rotate(-45deg) scale(1.08);
+        transform:scale(1.08);
 
     }
+
 
 }
 
 
 
-/* Mobile optimization */
+/* PHONE */
 
 @media(max-width:600px){
 
@@ -292,39 +298,9 @@ button:hover{
     }
 
 
-    .smallTitle{
-
-        font-size:18px;
-
-    }
-
-
-    p{
-
-        font-size:20px;
-
-    }
-
-
-    button{
-
-        font-size:20px;
-
-        padding:15px 30px;
-
-    }
-
-
     .paper{
 
         padding:35px 20px;
-
-    }
-
-
-    .paper h2{
-
-        font-size:30px;
 
     }
 
@@ -338,44 +314,7 @@ button:hover{
 
     .heart{
 
-        width:150px;
-
-        height:150px;
-
-    }
-
-
-    .heart::before,
-    .heart::after{
-
-        width:150px;
-
-        height:150px;
-
-    }
-
-
-    .heart::before{
-
-        top:-75px;
-
-    }
-
-
-    .heart::after{
-
-        left:75px;
-
-    }
-
-
-    .heart span{
-
-        width:150px;
-
-        top:62px;
-
-        font-size:24px;
+        transform:scale(.85);
 
     }
 
