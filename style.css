@@ -23,11 +23,17 @@ body{
 
 }
 
+
+/* First screen */
+
 .hero{
 
     text-align:center;
 
+    padding:20px;
+
 }
+
 
 .smallTitle{
 
@@ -39,6 +45,7 @@ body{
 
 }
 
+
 h1{
 
     font-size:55px;
@@ -46,6 +53,7 @@ h1{
     color:#222;
 
 }
+
 
 p{
 
@@ -56,6 +64,10 @@ p{
     color:#555;
 
 }
+
+
+
+/* Button */
 
 button{
 
@@ -79,6 +91,7 @@ button{
 
 }
 
+
 button:hover{
 
     transform:translateY(-5px);
@@ -87,17 +100,32 @@ button:hover{
 
 }
 
+
+
+/* General */
+
 .hidden{
 
     display:none;
 
 }
 
+
 #letter{
 
     position:absolute;
 
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
 }
+
+
+
+/* Letter */
 
 .paper{
 
@@ -109,11 +137,13 @@ button:hover{
 
     border-radius:25px;
 
-    box-shadow:0 40px 80px rgba(0,0,0,.15);
+    box-shadow:
+    0 40px 80px rgba(0,0,0,.15);
 
     text-align:center;
 
 }
+
 
 .paper h2{
 
@@ -121,7 +151,10 @@ button:hover{
 
     margin-bottom:30px;
 
+    font-size:36px;
+
 }
+
 
 #typing{
 
@@ -131,7 +164,13 @@ button:hover{
 
     min-height:220px;
 
+    color:#444;
+
 }
+
+
+
+/* Heart */
 
 .heart{
 
@@ -151,12 +190,6 @@ button:hover{
 
     position:relative;
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
     color:white;
 
     font-weight:bold;
@@ -164,6 +197,10 @@ button:hover{
     font-size:28px;
 
 }
+
+
+
+/* Heart circles */
 
 .heart::before,
 .heart::after{
@@ -182,11 +219,13 @@ button:hover{
 
 }
 
+
 .heart::before{
 
     top:-90px;
 
 }
+
 
 .heart::after{
 
@@ -194,24 +233,150 @@ button:hover{
 
 }
 
+
+
+/* Heart text */
+
 .heart span{
+
+    position:absolute;
+
+    width:180px;
+
+    text-align:center;
+
+    top:75px;
+
+    left:0;
+
     transform:rotate(45deg);
-    position:relative;
+
     z-index:10;
+
+    white-space:nowrap;
+
 }
+
+
+
+/* Heart animation */
 
 @keyframes beat{
 
-0%,100%{
+    0%,100%{
 
-transform:rotate(-45deg) scale(1);
+        transform:rotate(-45deg) scale(1);
+
+    }
+
+
+    50%{
+
+        transform:rotate(-45deg) scale(1.08);
+
+    }
 
 }
 
-50%{
 
-transform:rotate(-45deg) scale(1.08);
 
-}
+/* Mobile optimization */
+
+@media(max-width:600px){
+
+
+    h1{
+
+        font-size:38px;
+
+    }
+
+
+    .smallTitle{
+
+        font-size:18px;
+
+    }
+
+
+    p{
+
+        font-size:20px;
+
+    }
+
+
+    button{
+
+        font-size:20px;
+
+        padding:15px 30px;
+
+    }
+
+
+    .paper{
+
+        padding:35px 20px;
+
+    }
+
+
+    .paper h2{
+
+        font-size:30px;
+
+    }
+
+
+    #typing{
+
+        font-size:22px;
+
+    }
+
+
+    .heart{
+
+        width:150px;
+
+        height:150px;
+
+    }
+
+
+    .heart::before,
+    .heart::after{
+
+        width:150px;
+
+        height:150px;
+
+    }
+
+
+    .heart::before{
+
+        top:-75px;
+
+    }
+
+
+    .heart::after{
+
+        left:75px;
+
+    }
+
+
+    .heart span{
+
+        width:150px;
+
+        top:62px;
+
+        font-size:24px;
+
+    }
 
 }
