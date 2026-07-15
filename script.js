@@ -1,58 +1,86 @@
-const button=document.getElementById("startButton");
+const button = document.getElementById("startButton");
+const hero = document.getElementById("hero");
+const letter = document.getElementById("letter");
+const typing = document.getElementById("typing");
+const heart = document.getElementById("heart");
 
-const hero=document.querySelector(".hero");
 
-const letter=document.getElementById("letter");
-
-const typing=document.getElementById("typing");
-
-const heart=document.getElementById("heart");
-
-const text=`רציתי להזמין אותך
+const text = 
+`רציתי להזמין אותך
 לערב רומנטי ביום שישי.
-אני אגיע בצהריים לאסוף אותך
-את רק צריכה לוודא להיות יפה
 
-כל השאר עליי
+אני אגיע בצהריים לאסוף אותך.
 
-תסכימי לצאת איתי? ❤️`;
+את רק צריכה לוודא להיות יפה,
+כל השאר עליי ❤️
 
-button.onclick=()=>{
+תסכימי לצאת איתי?`;
 
-hero.style.display="none";
 
-letter.classList.remove("hidden");
 
-let i=0;
+button.addEventListener("click", () => {
 
-const timer=setInterval(()=>{
 
-typing.textContent+=text[i];
+    // Hide opening screen
+    hero.style.display = "none";
 
-i++;
 
-if(i===text.length){
+    // Show letter
+    letter.classList.remove("hidden");
 
-clearInterval(timer);
 
-heart.classList.remove("hidden");
+    // Type the letter
+    let i = 0;
 
-}
 
-},45);
+    const timer = setInterval(() => {
 
-}
 
-heart.onclick=()=>{
+        typing.textContent += text[i];
 
-heart.style.animation="none";
+        i++;
 
-heart.style.transform="rotate(-45deg) scale(1.4)";
 
-setTimeout(()=>{
+        if (i >= text.length) {
 
-window.location.href="https://wa.me/972532388902?text=אני%20מסכימה%20❤️";
 
-},1200);
+            clearInterval(timer);
 
-}
+
+            // Show heart after typing finishes
+            heart.classList.remove("hidden");
+
+
+        }
+
+
+    }, 45);
+
+
+});
+
+
+
+
+heart.addEventListener("click", () => {
+
+
+    // Stop beating
+    heart.style.animation = "none";
+
+
+    // Grow effect
+    heart.style.transform = "scale(1.4)";
+
+
+    setTimeout(() => {
+
+
+        window.location.href =
+        "https://wa.me/972532388902?text=אני%20מסכימה%20❤️";
+
+
+    }, 1200);
+
+
+});
